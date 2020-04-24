@@ -57,7 +57,8 @@ p {
 
 .container {
     margin: 0 auto;
-    width: 400px;
+    width: 95vw;
+    max-width: 550px;
 }
 
 
@@ -71,7 +72,7 @@ h4 {
 }
 
 main {
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 .total {
@@ -123,7 +124,7 @@ main {
 }
 
 .history {
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .history__item {
@@ -174,8 +175,8 @@ main {
 }
 
 .operation {
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     background-color: #ddd;
     border-radius: 25px;
     padding: 15px 15px;
@@ -217,3 +218,6 @@ main {
     color: darkorange;
 }
 
+.time {
+    margin-top: 10px;
+}
