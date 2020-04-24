@@ -1,22 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Кошелек</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
     <head>
-        <h1>Калькулятор расходов</h2>
+        <div class="container">
+            <h1 class="operation">Финансовый калькулятор</h1>
+        </div>
     </head>
-
     <main>
         <div class="container">
-            <section class="total">
+            <section class="total balance">
                 <header class="total__header">
                     <h3>Баланс</h3>
                 <p class="total__balance">0 ₽</p>
@@ -37,13 +35,17 @@
                 </div>
             </section>
 
-            <section class="history">
-                <h3>История операций :</h3>
-                <ul class="history__list">
-
-                </ul>
+            <section class="total info">
+                <header">
+                    <h2>Добавьте новую операцию</h2>
+                    <p class="total__money-expenses">Чтобы указать новую приходную операцию, введите сумму поступления, чтобы указать новую расходную операцию, введите число со знаком "-"</p>
+                </header>
             </section>
 
+            <section class="history">
+                <h3 class="operation__header">История операций :</h3>
+                <ul class="history__list"></ul>
+            </section>
             <section class="operation">
                 <h3>Новая операция</h3>
                 <form id="form">
@@ -54,12 +56,10 @@
                         <input type="number" class="operation__fields operation__amount" placeholder="Введите сумму">
                     </label>
                     <button type="submit" class="operation__add">Добавить операцию</button>
-
                 </form>
             </section>
         </div>
     </main>
     <script src="./js/script.js"></script>
 </body>
-
 </html>
