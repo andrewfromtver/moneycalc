@@ -58,7 +58,8 @@ p {
 .container {
     margin: 0 auto;
     width: 95vw;
-    max-width: 550px;
+    max-width: 500px;
+    min-width: 315px;
 }
 
 
@@ -83,7 +84,7 @@ main {
 }
 
 .total__balance{
-    font-size: 28px;
+    font-size: 22px;
     font-weight: bold;
 }
 
@@ -111,7 +112,7 @@ main {
 }
 
 .total__money {
-    font-size: 24px;
+    font-size: 20px;
     line-height: 1.5;
 }
 
