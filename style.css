@@ -252,15 +252,14 @@ input[type="file"] {
     display: flex;
     justify-content: center;
     cursor: pointer;
+    z-index: 100;
 }
 
 .popUpImage {
     margin-top: 5vh;
     position: absolute;
     height: 90vh;
-    width: 95vw;
-    max-height: 768px;
-    max-width: 1366px;
+    width: 90vw;
     background-color: #fff;
     border-width: 2px;
     border-style: solid;
