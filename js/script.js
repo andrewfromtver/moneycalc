@@ -113,6 +113,7 @@ const deleteOperation = (event) => {
             showImage(dbOperation[0].attachement);
         }
         else {
+            outputInfo = dbOperation.filter(operation => operation.id == target.dataset.id);
             showImage(outputInfo[0].attachement);
         }
     }
