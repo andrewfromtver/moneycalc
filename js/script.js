@@ -7,6 +7,7 @@ const
     operationHeader = document.querySelector('.operation__header'),
     operationName = document.querySelector('.operation__name'),
     operationAmount = document.querySelector('.operation__amount'),
+    operationAttachementField = document.querySelector('.upload__button'),
     balance = document.querySelector('.balance'),
     info = document.querySelector('.info');
 
@@ -38,8 +39,7 @@ const renderOperation = (operation) => {
     listItem.classList.add('history__item');
     listItem.classList.add(className);
     listItem.innerHTML = `
-        ${operation.time}
-        <br>${operation.description}
+        ${operation.time}<br>${operation.description}
         <span class="history__money">${operation.amount} ₽</span>
         <button class="history__delete" data-id="${operation.id}">x</button>
     `;
@@ -63,26 +63,32 @@ const addOperation = (event) => {
     const
         operationNameValue = operationName.value,
         operationAmountValue = operationAmount.value;
+        operationAttachement = document.getElementById('upload').files[0];
         operationName.style.borderColor = '';
         operationAmount.style.borderColor = '';
-        if(operationNameValue && operationAmountValue){
-
-            const operation = {
-                id: generateId(),
-                description: operationNameValue,
-                amount: +operationAmountValue,
-                time: new Date().toLocaleString()
-            };
-
+        if(operationNameValue && operationAmountValue && operationAttachement){
+            let reader = new FileReader();
+            reader.readAsText(operationAttachement);
+            reader.onload = function() {
+                const operation = {
+                    id: generateId(),
+                    description: operationNameValue,
+                    amount: +operationAmountValue,
+                    time: new Date().toLocaleString(),
+                    attachement: reader.result
+                };
             dbOperation.push(operation);
             init();
-
+            console.log(dbOperation);
+        };
         } else {
             if (!operationNameValue) operationName.style.borderColor = 'red';
             if (!operationAmountValue) operationAmount.style.borderColor = 'red';
+            if (!operationAttachement) operationAttachementField.style.borderColor = 'red';
         }
         operationName.value = '';
         operationAmount.value = '';
+        document.getElementById("upload").value = "";;
 };
 
 const deleteOperation = (event) => {
