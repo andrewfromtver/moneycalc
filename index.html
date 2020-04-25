@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Кошелек</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <head>
@@ -50,10 +50,10 @@
                 <h3>Новая операция</h3>
                 <form id="form">
                     <label>
-                        <input type="text" class="operation__fields operation__name" placeholder="Наименование операции">
+                        <input type="text" class="operation__fields operation__name" placeholder="Наименование операции"  maxlength="12">
                     </label>
                     <label>
-                        <input type="number" class="operation__fields operation__amount" placeholder="Введите сумму">
+                        <input oninput="maxLengthCheck(this)" type = "number" maxlength = "9" class="operation__fields operation__amount" placeholder="Введите сумму">
                     </label>
                     <button type="submit" class="operation__add">Добавить операцию</button>
                 </form>
