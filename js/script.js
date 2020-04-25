@@ -9,7 +9,8 @@ const
     operationAmount = document.querySelector('.operation__amount'),
     operationAttachementField = document.querySelector('.upload__button'),
     balance = document.querySelector('.balance'),
-    info = document.querySelector('.info');
+    info = document.querySelector('.info'),
+    popUp = document.querySelector('.popUp');
 
 let dbOperation = JSON.parse(localStorage.getItem('calc')) || [];
 
@@ -38,11 +39,10 @@ const renderOperation = (operation) => {
     const listItem = document.createElement('li');
     listItem.classList.add('history__item');
     listItem.classList.add(className);
-    listItem.innerHTML = `
-        ${operation.time}<br>${operation.description}
-        <span class="history__money">${operation.amount} ₽</span>
-        <button class="history__delete" data-id="${operation.id}">x</button>
-    `;
+    listItem.innerHTML = `${operation.time}
+    <br>${operation.description}
+    <span class="history__money" data-id="${operation.id}">${operation.amount} ₽</span>
+    <button class="history__delete" data-id="${operation.id}">X</button>`;
     historyList.append(listItem);
 };
 
@@ -68,7 +68,7 @@ const addOperation = (event) => {
         operationAmount.style.borderColor = '';
         if(operationNameValue && operationAmountValue && operationAttachement){
             let reader = new FileReader();
-            reader.readAsText(operationAttachement);
+            reader.readAsDataURL(operationAttachement);
             reader.onload = function() {
                 const operation = {
                     id: generateId(),
@@ -79,7 +79,6 @@ const addOperation = (event) => {
                 };
             dbOperation.push(operation);
             init();
-            console.log(dbOperation);
         };
         } else {
             if (!operationNameValue) operationName.style.borderColor = 'red';
@@ -91,12 +90,31 @@ const addOperation = (event) => {
         document.getElementById("upload").value = "";;
 };
 
+const showImage = (src) => {
+    img = document.createElement("img");
+    img.src = src;
+    img.className = 'popUpImage';
+    if (popUp.childNodes.length > 0) {
+        popUp.removeChild(popUp.firstChild);
+    }
+    popUp.appendChild(img);
+    up();
+};
+
 const deleteOperation = (event) => {
     const target = event.target
     if (event.target.classList.contains('history__delete')) {
-        dbOperation = dbOperation
-            .filter(operation => operation.id !== target.dataset.id);
+        dbOperation = dbOperation.filter(operation => operation.id !== target.dataset.id);
         init();
+    }
+    if (event.target.classList.contains('history__money')) {
+        outputInfo = dbOperation.filter(operation => operation.id !== target.dataset.id);
+        if (outputInfo.length == 0) {
+            showImage(dbOperation[0].attachement);
+        }
+        else {
+            showImage(outputInfo[0].attachement);
+        }
     }
 };
 
@@ -112,3 +130,20 @@ form.addEventListener('submit', addOperation);
 historyList.addEventListener('click', deleteOperation);
 
 init();
+
+const hideImage = () => {
+    if (popUp.childNodes.length > 0) {
+        popUp.removeChild(popUp.firstChild);
+    }
+};
+
+const up = () => {
+	var t;
+	var top = Math.max(document.body.scrollTop,document.documentElement.scrollTop);
+	if(top > 0) {
+		window.scrollBy(0,-100);
+		t = setTimeout('up()',50);
+	}
+	else clearTimeout(t);
+	return false;
+}
