@@ -38,7 +38,11 @@
             <section class="total info">
                 <header">
                     <h2>Добавьте новую операцию</h2>
-                    <p class="total__money-expenses">Чтобы указать новую приходную операцию, введите сумму поступления, чтобы указать новую расходную операцию, введите число со знаком "-"</p>
+                    <p class="total__money-expenses">
+                        Чтобы указать новую приходную операцию, введите сумму поступления,
+                        чтобы указать новую расходную операцию, введите число со знаком "-",
+                        чтобы приложить кассовый чек (или любой другой документ) нажмите кнопку "Приложить кассовый чек"
+                    </p>
                 </header>
             </section>
 
@@ -54,6 +58,12 @@
                     </label>
                     <label>
                         <input oninput="maxLengthCheck(this)" type = "number" maxlength = "9" class="operation__fields operation__amount" placeholder="Введите сумму">
+                    </label>
+                    <label>
+                        <div class=”button-wrap”>
+                            <label class ="operation__fields upload__button" for="upload">Приложить кассовый чек</label>
+                            <input id="upload" type="file">
+                        <div>
                     </label>
                     <button type="submit" class="operation__add">Добавить операцию</button>
                 </form>
