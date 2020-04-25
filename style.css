@@ -183,7 +183,7 @@ main {
 
 .operation__fields{
     display: block;
-    border: 1px solid #ccc;
+    border: 2px solid #ccc;
     border-radius: 10px;
     padding:  10px 15px;
     margin: 5px 0;
@@ -193,7 +193,7 @@ main {
 }
 
 .operation__fields:focus{
-    border: 1px solid darkorange;
+    border: 2px solid darkorange;
 }
 
 .operation__add {
@@ -216,6 +216,29 @@ main {
     color: darkorange;
 }
 
-.time {
-    margin-top: 10px;
+.upload__button {
+    display: inline-block;
+    padding: 8px 12px; 
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: darkgreen;
+    color: #fff;
+    border-width: 2px;
+    border-style: solid;
+    border-color: darkgreen;
+    margin:2px 0 10px 0;
+    text-align: center;
+}
+.upload__button:hover {
+    background-color: white;
+    color: darkgreen;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.button-wrap {
+  position: relative;
 }
