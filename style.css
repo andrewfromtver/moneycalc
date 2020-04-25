@@ -22,7 +22,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    font-family: sans-serif;
 }
 
 
@@ -136,7 +136,7 @@ main {
     color: #333;
     display: flex;
     justify-content: space-between;
-    padding: 10px;
+    padding: 5px;
     margin: 10px 0;
     line-height: 25px;
 }
@@ -154,7 +154,6 @@ main {
 .history__money{
     flex: 1;
     text-align: right;
-    padding-right: 10px;
 }
 
 .history__delete{
