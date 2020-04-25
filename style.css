@@ -156,6 +156,11 @@ main {
 .history__money{
     flex: 1;
     text-align: right;
+    cursor: pointer;
+}
+
+.history__money:hover {
+    opacity: 0.5;
 }
 
 .history__delete{
@@ -168,7 +173,7 @@ main {
     cursor: pointer;
 }
 
-.history__item:hover .history__delete{
+.history__delete:hover{
     opacity: 1;
 }
 
@@ -241,4 +246,25 @@ input[type="file"] {
 
 .button-wrap {
   position: relative;
+}
+
+.popUp {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.popUpImage {
+    margin-top: 5vh;
+    position: absolute;
+    height: 90vh;
+    width: 95vw;
+    max-height: 768px;
+    max-width: 1366px;
+    background-color: #fff;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #ccc;
+    border-radius: 10px;
+    padding: 2px;
 }
