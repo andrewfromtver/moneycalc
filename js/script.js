@@ -25,6 +25,11 @@ const operationHeaderCheck = () => {
     }
 };
 
+function maxLengthCheck(object) {
+    if (object.value.length > object.maxLength)
+      object.value = object.value.slice(0, object.maxLength)
+};
+
 const generateId = () => `id${Math.round(Math.random() * 1e8).toString(16)}`
 
 const renderOperation = (operation) => {
