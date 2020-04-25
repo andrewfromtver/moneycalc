@@ -159,9 +159,8 @@ main {
 .history__delete{
     background-color: transparent;
     color: red;
-    padding: 0 10;
     border-width: 0;
-    font-size: 20px;
+    font-size: 15px;
     opacity: 0.15;
     transition: opacity 0.3s ease;
     cursor: pointer;
