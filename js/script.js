@@ -136,6 +136,7 @@ const hideImage = () => {
     if (popUp.childNodes.length > 0) {
         popUp.removeChild(popUp.firstChild);
     }
+    down();
 };
 
 const up = () => {
@@ -147,4 +148,15 @@ const up = () => {
 	}
 	else clearTimeout(t);
 	return false;
-}
+};
+
+const down = () => {
+	var t;
+	var top = Math.max(document.body.scrollTop,document.documentElement.scrollTop);
+	if(top == 0) {
+		window.scrollBy(0, 999999999);
+		t = setTimeout('down()',50);
+	}
+	else clearTimeout(t);
+	return false;
+};
