@@ -66,6 +66,7 @@ const addOperation = (event) => {
         operationAttachement = document.getElementById('upload').files[0];
         operationName.style.borderColor = '';
         operationAmount.style.borderColor = '';
+        operationAttachementField.style.backgroundColor = '';
         if(operationNameValue && operationAmountValue && operationAttachement){
             let reader = new FileReader();
             reader.readAsDataURL(operationAttachement);
@@ -83,7 +84,7 @@ const addOperation = (event) => {
         } else {
             if (!operationNameValue) operationName.style.borderColor = 'red';
             if (!operationAmountValue) operationAmount.style.borderColor = 'red';
-            if (!operationAttachement) operationAttachementField.style.borderColor = 'red';
+            if (!operationAttachement) operationAttachementField.style.backgroundColor = 'red';
         }
         operationName.value = '';
         operationAmount.value = '';
