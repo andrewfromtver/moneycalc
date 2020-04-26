@@ -265,7 +265,10 @@ input[type="file"] {
     padding: 2px;
 }
 
-.ya-share2 .me {
+.ya-share2 {
     text-align: center;
     margin-bottom: 20px;
+}
+.me {
+    margin: 20px;
 }
