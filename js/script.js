@@ -9,7 +9,6 @@ const
     operationAmount = document.querySelector('.operation__amount'),
     balance = document.querySelector('.balance'),
     info = document.querySelector('.info'),
-    loader = document.querySelector('.loader'),
     popUp = document.querySelector('.popUp'),
     errorMesage = document.querySelector('.error');
 
@@ -42,13 +41,11 @@ const operationHeaderCheck = () => {
         operationHeader.style.cssText = 'display:none;';
         balance.style.cssText = 'display:none;';
         info.style.cssText = '';
-        loader.style.cssText = '';
     }
     else {
         operationHeader.style.cssText = '';
         balance.style.cssText = '';
         info.style.cssText = 'display:none;';
-        loader.style.cssText = 'display:none;';
     }
 };
 /* -- Pop-up image control -- */
