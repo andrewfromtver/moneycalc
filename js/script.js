@@ -10,7 +10,9 @@ const
     operationAttachementField = document.querySelector('.upload__button'),
     balance = document.querySelector('.balance'),
     info = document.querySelector('.info'),
-    popUp = document.querySelector('.popUp');
+    popUp = document.querySelector('.popUp'),
+    historyLoading = document.querySelector('.loading'),
+    loaderItem = document.querySelector('.loader');
 /* -- localstorage -- */
 let dbOperation = JSON.parse(localStorage.getItem('calc')) || [];
 /* -- Scroll control -- */
@@ -40,11 +42,16 @@ const operationHeaderCheck = () => {
         operationHeader.style.cssText = 'display:none;';
         balance.style.cssText = 'display:none;';
         info.style.cssText = '';
+        historyLoading.style.cssText = 'display: flex; justify-content: center;';
+        loaderItem.style.cssText = '';
+
     }
     else {
         operationHeader.style.cssText = '';
         balance.style.cssText = '';
         info.style.cssText = 'display:none;';
+        historyLoading.style.cssText = '';
+        loaderItem.style.cssText = 'display:none;';
     }
 };
 /* -- Pop-up image control -- */
