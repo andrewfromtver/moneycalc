@@ -1,19 +1,18 @@
+/* -- Google fonts API -- */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+/* -- Global styles -- */
 html {
     box-sizing: border-box;
 }
-
 :root {
     --main-color: #242424;
 }
-
 *,
 *::before,
 *::after {
     box-sizing: inherit;
 }
-
 body {
     margin: 0;
     background-color: #fff;
@@ -26,24 +25,19 @@ body {
     align-items: center;
     font-family: 'Roboto', sans-serif;
 }
-
-
 img {
     max-width: 100%;
     height: auto;
 }
-
 a {
     text-decoration: none;
     color: inherit;
 }
-
 ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
-
 h1,
 h2,
 h3,
@@ -53,81 +47,64 @@ p {
     margin: 0;
     text-align: center;
 }
-
 .container {
     margin: 0 auto;
     width: 95vw;
     max-width: 500px;
     min-width: 315px;
 }
-
-
 h1, h2, h3 {
-    line-height: 1.5;
-    
+    line-height: 1.5;   
 }
-
 h4 {
     text-transform: uppercase;
 }
 
+/* -- Total block -- */
 .total {
     padding: 20px;
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 25px;
 }
-
 .total__balance{
     font-size: 22px;
     font-weight: bold;
 }
-
 .total__header{
     border-bottom: 1px solid #ccc;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-
 .total__main{
     display: flex;
     justify-content: space-between;
 }
-
 .total__main-item {
     flex: 1;
     text-align: center;
     padding-top: 15px;
 
 }
-
 .total__main-item:first-child{
     border-right: 1px solid #ccc;
 }
-
 .total__money {
     font-size: 20px;
     line-height: 1.5;
 }
-
 .total__money-expenses {
     color: tomato;
 }
-
 .total__money-income {
     color: darkgreen;
 }
 
+/* -- History block -- */
 .history {
     margin-top: 20px;
-    margin-bottom: 20px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 25px;
-    padding: 15px 15px;
 }
-
 .history__item {
     align-items: center;
     background-color: #fff;
@@ -143,27 +120,22 @@ h4 {
     margin: 10px 0;
     line-height: 25px;
 }
-
 .history__item-plus{
     border-left-color:  darkgreen;
     border-right-color: darkgreen;
 }
-
 .history__item-minus{
     border-left-color:  tomato;
     border-right-color: tomato;
 }
-
 .history__money{
     flex: 1;
     text-align: right;
     cursor: pointer;
 }
-
 .history__money:hover {
     opacity: 0.5;
 }
-
 .history__delete{
     background-color: transparent;
     color: red;
@@ -173,11 +145,11 @@ h4 {
     transition: opacity 0.3s ease;
     cursor: pointer;
 }
-
 .history__delete:hover{
     opacity: 1;
 }
 
+/* -- Operation block -- */
 .operation {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -185,8 +157,6 @@ h4 {
     border-radius: 25px;
     padding: 15px 15px;
 }
-
-
 .operation__fields{
     display: block;
     border: 2px solid #ccc;
@@ -197,11 +167,9 @@ h4 {
     width: 100%;
     outline: transparent;
 }
-
 .operation__fields:focus{
     border: 2px solid darkorange;
 }
-
 .operation__add {
     background-color: darkorange;
     border-width: 2px;
@@ -216,12 +184,10 @@ h4 {
     margin: 15px 0;
     cursor: pointer;
 }
-
 .operation__add:hover {
     background-color: white;
     color: darkorange;
 }
-
 .upload__button {
     display: inline-block;
     padding: 8px 12px; 
@@ -240,22 +206,20 @@ h4 {
     background-color: white;
     color: darkgreen;
 }
-
 input[type="file"] {
   display: none;
 }
-
 .button-wrap {
   position: relative;
 }
 
+/* -- Popup -- */
 .popUp {
     display: flex;
     justify-content: center;
     cursor: pointer;
     z-index: 100;
 }
-
 .popUpImage {
     top: 0;
     margin-top: 5vh;
@@ -270,69 +234,70 @@ input[type="file"] {
     padding: 2px;
 }
 
+/* -- Footer -- */
+.me {
+    margin: 20px;
+}
 .ya-share2 {
     text-align: center;
     margin-bottom: 20px;
 }
 
-.me {
-    margin: 20px;
-    color: #242424;
-}
-
-/* -- Loader -- */
+/* -- Loader animation -- */
 .lds-ellipsis {
+    margin-top: 20px;
     display: inline-block;
     position: relative;
     width: 80px;
     height: 20px;
-  }
-  .lds-ellipsis div {
+    left: 42%;
+}
+.lds-ellipsis div {
     position: absolute;
     top: 3px;
     width: 13px;
     height: 13px;
     border-radius: 50%;
-    background: #242424;
+    background: tomato;
     animation-timing-function: cubic-bezier(0, 1, 1, 0);
-  }
-  .lds-ellipsis div:nth-child(1) {
+}
+.lds-ellipsis div:nth-child(1) {
     left: 8px;
     animation: lds-ellipsis1 0.6s infinite;
-  }
-  .lds-ellipsis div:nth-child(2) {
+}
+.lds-ellipsis div:nth-child(2) {
     left: 8px;
     animation: lds-ellipsis2 0.6s infinite;
-  }
-  .lds-ellipsis div:nth-child(3) {
+}
+.lds-ellipsis div:nth-child(3) {
     left: 32px;
     animation: lds-ellipsis2 0.6s infinite;
-  }
-  .lds-ellipsis div:nth-child(4) {
+}
+.lds-ellipsis div:nth-child(4) {
     left: 56px;
     animation: lds-ellipsis3 0.6s infinite;
-  }
-  @keyframes lds-ellipsis1 {
+}
+@keyframes lds-ellipsis1 {
     0% {
       transform: scale(0);
     }
     100% {
       transform: scale(1);
     }
-  }
-  @keyframes lds-ellipsis3 {
+}
+@keyframes lds-ellipsis3 {
     0% {
       transform: scale(1);
     }
     100% {
       transform: scale(0);
     }
-  }
-  @keyframes lds-ellipsis2 {
+}
+@keyframes lds-ellipsis2 {
     0% {
       transform: translate(0, 0);
     }
     100% {
       transform: translate(24px, 0);
     }
-  }
+}
