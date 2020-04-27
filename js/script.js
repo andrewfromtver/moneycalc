@@ -7,11 +7,11 @@ const
     operationHeader = document.querySelector('.operation__header'),
     operationName = document.querySelector('.operation__name'),
     operationAmount = document.querySelector('.operation__amount'),
-    operationAttachementField = document.querySelector('.upload__button'),
     balance = document.querySelector('.balance'),
     info = document.querySelector('.info'),
     loader = document.querySelector('.loader'),
-    popUp = document.querySelector('.popUp');
+    popUp = document.querySelector('.popUp'),
+    errorMesage = document.querySelector('.error');
 
 /* -- localstorage -- */
 let dbOperation = JSON.parse(localStorage.getItem('calc')) || [];
@@ -128,8 +128,24 @@ const addOperation = (event) => {
                     time: new Date().toLocaleString(),
                     attachement: reader.result
                 };
-            dbOperation.push(operation);
-            init();
+                try {
+                    dbOperation.push(operation);
+                    init();
+                }
+                catch (e) {
+                    dbOperation.pop();
+                    const operation = {
+                        id: generateId(),
+                        description: operationNameValue,
+                        amount: +operationAmountValue,
+                        time: new Date().toLocaleString(),
+                        attachement: 'no_image.png'
+                    };
+                    dbOperation.push(operation);
+                    init();
+                    errorMesage.textContent = 'Кассовый чек не сохранен, размер прикладываемого файла превышает лимит локального хранилища в вашем браузере ...';
+                    console.log('Attacement lost, storage is full.');
+                }
             };
         };
         } else {
@@ -164,6 +180,7 @@ const init = () => {
     updateBalance();
     localStorage.setItem('calc', JSON.stringify(dbOperation));
     operationHeaderCheck();
+    errorMesage.textContent = '';
 };
 /* -- Listeners --*/
 form.addEventListener('submit', addOperation);
