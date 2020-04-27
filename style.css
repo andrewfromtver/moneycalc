@@ -148,7 +148,11 @@ h4 {
 .history__delete:hover{
     opacity: 1;
 }
-
+/* -- Error message -- */
+.error {
+    text-align: center;
+    color: tomato;
+}
 /* -- Operation block -- */
 .operation {
     margin-top: 20px;
