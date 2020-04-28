@@ -141,6 +141,8 @@ const addOperation = (event) => {
                     dbOperation.push(operation);
                     init();
                     errorMesage.textContent = 'Кассовый чек не сохранен, размер прикладываемого файла превышает лимит локального хранилища в вашем браузере ...';
+                    errorMesage.style.padding = '15px';
+                    errorMesage.style.borderStyle = 'solid';
                     console.log('Attacement lost, storage is full.');
                 }
             };
@@ -178,6 +180,8 @@ const init = () => {
     localStorage.setItem('calc', JSON.stringify(dbOperation));
     operationHeaderCheck();
     errorMesage.textContent = '';
+    errorMesage.style.padding = '';
+    errorMesage.style.borderStyle = '';
 };
 /* -- Listeners --*/
 form.addEventListener('submit', addOperation);
