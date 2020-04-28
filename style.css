@@ -155,7 +155,11 @@ h4 {
 /* -- Error message -- */
 .error {
     text-align: center;
-    color: tomato;
+    color: #fff;
+    background-color: tomato;
+    border-width: 2px;
+    border-color: #ccc;
+    border-radius: 20px;
 }
 /* -- Operation block -- */
 .operation {
