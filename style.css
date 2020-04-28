@@ -14,6 +14,10 @@ html {
     box-sizing: inherit;
 }
 body {
+    background-image: url("./background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
     margin: 0;
     background-color: #fff;
     font-size: 16px;
@@ -98,7 +102,7 @@ h4 {
     color: tomato;
 }
 .total__money-income {
-    color: darkgreen;
+    color: rgb(52, 158, 52);
 }
 
 /* -- History block -- */
@@ -121,8 +125,8 @@ h4 {
     line-height: 25px;
 }
 .history__item-plus{
-    border-left-color:  darkgreen;
-    border-right-color: darkgreen;
+    border-left-color:  rgb(52, 158, 52);
+    border-right-color: rgb(52, 158, 52);
 }
 .history__item-minus{
     border-left-color:  tomato;
@@ -157,7 +161,7 @@ h4 {
 .operation {
     margin-top: 20px;
     margin-bottom: 20px;
-    background-color: #ddd;
+    background-color: #eef;
     border-radius: 25px;
     padding: 15px 15px;
 }
@@ -175,7 +179,7 @@ h4 {
     border: 2px solid darkorange;
 }
 .operation__add {
-    background-color: darkorange;
+    background-color: rgb(241, 155, 48);
     border-width: 2px;
     border-style: solid;
     border-color: darkorange;
@@ -198,7 +202,7 @@ h4 {
     cursor: pointer;
     border-radius: 10px;
     font-size: 16px;
-    background-color: darkgreen;
+    background-color: rgb(51, 126, 51);
     color: #fff;
     border-width: 2px;
     border-style: solid;
@@ -230,7 +234,7 @@ input[type="file"] {
     position: absolute;
     height: 80vh;
     width: 90vw;
-    background-color: #fff;
+    background-color: #eef;
     border-width: 2px;
     border-style: solid;
     border-color: #ccc;
@@ -240,7 +244,15 @@ input[type="file"] {
 
 /* -- Footer -- */
 .me {
-    margin: 20px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    color: #242424;
+    background-color: #eef;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #ccc;
+    border-radius: 10px;
+    padding: 2px;
 }
 .ya-share2 {
     text-align: center;
