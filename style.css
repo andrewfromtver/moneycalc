@@ -231,7 +231,7 @@ input[type="file"] {
     justify-content: center;
     cursor: pointer;
     z-index: 100;
-    margin-bottom: 7vh;
+    margin-bottom: 5vh;
 }
 .popUpImage {
     top: 0;
